@@ -1,24 +1,22 @@
-//Business Logic for Order
-function Order() {
-    this.pizzas = [],
-    this. drinks = [],
-    this.PizzaId = 0,
-    this.drinkId = 0
-}
 
-Order.prototype.addPizza = function(pizza) {
-    pizza.id=this.assignId();
-    this.pizzas.push(pizza);
-}
-
-Order.prototype.assignId - function() {
-    this.pizzaId += 1;
-    return this.pizzaId;
-}
-// Order.prototype.addDrink = function(drink) {
-//     drink.id=this.assignId();
-//     this.drinks.push(drink);
-// }
 
 //Business logic for pizzas
+function Pizza (size, toppings) {
+    this.size = size;
+    this.toppings = toppings;
+}
+
+Pizza.prototype.cost = function() {
+   var price = parseInt(this.size);
+   if (toppings.length > 3) {
+   return price + (parseInt(toppings.length) - 3)
+   } else {
+       return price;
+   }
+}
+
+
+//User Interface
+var pizzaOrder = new pizzaOrder();
+   
 
