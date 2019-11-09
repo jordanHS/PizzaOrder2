@@ -7,7 +7,7 @@ function Pizza (size, toppings) {
 Pizza.prototype.cost = function() {
    var price = parseInt(this.size);
    if (this.toppings.length > 3) {
-   return parseInt(price) + (parseInt(toppings.length) - 3)
+   return parseInt(price) + (parseInt(this.toppings.length) - 3)
    } else {
        return price;
    }
