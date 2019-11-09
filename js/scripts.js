@@ -6,9 +6,8 @@ function Pizza (size, toppings) {
 
 Pizza.prototype.cost = function() {
    var price = parseInt(this.size);
-    console.log(Pizza.price);
    if (this.toppings.length > 3) {
-   return parseInt(price) + (parseInt(this.toppings.length) - 3)
+   return parseInt(price) + (parseInt(toppings.length) - 3)
    } else {
        return price;
    }
@@ -23,10 +22,11 @@ $(document).ready(function() {
         var address = $("input#address").val();
         var pizzaSize = $("input:radio[name=pizzaSize]:checked").val();
         var pizzaToppings = [];
-        $("input:checkbox[name=topping]:checked").each(function(){
+        console.log(pizzaToppings);
+        $("input:checkbox[name=pizzaTopping]:checked").each(function(){
         var toppings = $(this).val();
         pizzaToppings.push(toppings)
-        console.log(pizzaToppings)
+        
     })
 
     var newPizza = new Pizza(pizzaSize, pizzaToppings.length);
